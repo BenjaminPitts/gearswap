@@ -1,59 +1,40 @@
-//___________________
-//Dependencies
-//___________________
-const express = require('express');
-const methodOverride  = require('method-override');
-const mongoose = require ('mongoose');
-const app = express ();
-const db = mongoose.connection;
+const express = require('express')
+const mongoose = require('mongoose')
+// CONFIGURATION
+const app = express()
 require('dotenv').config()
-//___________________
-//Port
-//___________________
-// Allow use of Heroku's port or your own local port, depending on the environment
-const PORT = process.env.PORT || 3003;
+const PORT = process.env.PORT
+const PROJECT3_DB = process.env.PROJECT3_DB
+// MIDDLEWARE
+app.use(express.json()) //use .json(), not .urlencoded()
+app.use(express.static('public'))
 
-//___________________
-//Database
-//___________________
-// How to connect to the database either via heroku or locally
-const PROJECT3_DB = process.env.PROJECT3_DB;
 
-// Connect to Mongo &
-// Fix Depreciation Warnings from Mongoose
-// May or may not need these depending on your Mongoose version
-mongoose.connect(PROJECT3_DB , { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false }
-);
+
+ // app.get('/', (req, res) => {
+ //   res.json('hello buddy')
+ // })
+const gearController = require('./controllers/gear.js')
+app.use('/gearswap', gearController)
+
+mongoose.connect(PROJECT3_DB, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useFindAndModify: false
+})
 
 // Error / success
-db.on('error', (err) => console.log(err.message + ' is Mongod not running?'));
-db.on('connected', () => console.log('mongo connected: ', PROJECT3_DB));
-db.on('disconnected', () => console.log('mongo disconnected'));
-
-//___________________
-//Middleware
-//___________________
-
-//use public folder for static assets
-app.use(express.static('public'));
-
-// populates req.body with parsed info from forms - if no data from forms will return an empty object {}
-app.use(express.urlencoded({ extended: false }));// extended: false - does not allow nested objects in query strings
-app.use(express.json());// returns middleware that only parses JSON - may or may not need it depending on your project
-
-//use method override
-app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
-
-
-//___________________
-// Routes
-//___________________
-//localhost:3000
-app.get('/' , (req, res) => {
-  res.send('Hello World!');
-});
-
-//___________________
-//Listener
-//___________________
-app.listen(PORT, () => console.log( 'Listening on port:', PORT));
+mongoose.connection.on('error', err =>
+  console.log(
+    err.message,
+    ' is Mongod not running?/Problem with Atlas Connection?'
+  )
+)
+mongoose.connection.on('connected', () =>
+  console.log('mongo connected: ', PROJECT3_DB)
+)
+mongoose.connection.on('disconnected', () => console.log('mongo disconnected'))
+// LISTENER
+app.listen(PORT, () => {
+  console.log('listening on port', PORT)
+})
