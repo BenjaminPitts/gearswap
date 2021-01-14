@@ -1,6 +1,9 @@
 {
   "name": "gearswap",
   "version": "1.0.0",
+  "engines": {
+    "node": "15.5.1"
+  },
   "description": "",
   "main": "server.js",
   "scripts": {
