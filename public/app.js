@@ -112,7 +112,7 @@ render = () => {
                     <label htmlFor="condition">Condition</label>
                     <input placeholder="How's it look ..."type="text" id="condition" onChange={this.handleChange}/>
                     <br/>
-                    <label htmlFor="price">Rental Price</label>
+                    <label htmlFor="price">Rental Price $</label>
                     <input placeholder="How Much You Ask Daily.."type="text" id="price" onChange={this.handleChange}/>
                     <br/>
                     <label htmlFor="seller">Seller Email:</label>
@@ -148,7 +148,7 @@ render = () => {
 
                         <button value={gears._id} onClick={this.deleteGear}>Remove</button>
                         <br/>
-                        <details className="editform">
+                        <details>
                             <summary>Edit {gears.type} Details</summary>
                             <form id={gears._id} onSubmit={this.updateGear}>
 
