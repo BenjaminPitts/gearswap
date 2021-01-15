@@ -91,32 +91,35 @@ render = () => {
 
             <h2><i>Rent some gear for the studio or an upcoming gig!</i></h2>
             <br />
+
+
             <div className='create'>
             <section id="add">
+            <h6> *Required</h6>
 
-                <form onSubmit={this.handleSubmit}>
-                    <label htmlFor="type">Type</label>
+                <form className='formi'onSubmit={this.handleSubmit}>
+                    <label htmlFor="type">Type  </label>
 
-                    <input type="text" id="type" onChange={this.handleChange}/>
+                    <input required placeholder="What kind of Gear.."type="text" id="type" onChange={this.handleChange}/>
                     <br/>
 
                     <label htmlFor="make">Make</label>
-                    <input type="text" id="make" onChange={this.handleChange}/>
+                    <input placeholder="What Make.."type="text" id="make" onChange={this.handleChange}/>
                     <br/>
                     <label htmlFor="model">Model</label>
-                    <input type="text" id="model" onChange={this.handleChange}/>
+                    <input placeholder="What Model.."type="text" id="model" onChange={this.handleChange}/>
                     <br/>
                     <label htmlFor="condition">Condition</label>
-                    <input type="text" id="condition" onChange={this.handleChange}/>
+                    <input placeholder="How's it look ..."type="text" id="condition" onChange={this.handleChange}/>
                     <br/>
                     <label htmlFor="price">Rental Price</label>
-                    <input type="text" id="price" onChange={this.handleChange}/>
+                    <input placeholder="How Much You Ask Daily.."type="text" id="price" onChange={this.handleChange}/>
                     <br/>
                     <label htmlFor="seller">Seller Email:</label>
-                    <input type="text" id="seller" onChange={this.handleChange}/>
+                    <input placeholder="Please Add You contact.."type="text" id="seller" onChange={this.handleChange}/>
                     <br/>
                     <label htmlFor="image">Picture</label>
-                    <input type="url" id="image" onChange={this.handleChange}/>
+                    <input placeholder="Do You Have A Picture.."type="url" id="image" onChange={this.handleChange}/>
                     <br/>
 
                     <input type="submit" value="Add Gear" />
