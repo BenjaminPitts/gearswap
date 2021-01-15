@@ -58,6 +58,25 @@ updateGear = (event) => {
   })
 }
 
+showStats=(event)=>{
+  event.preventDefault()
+  let stats = this.state.showStats
+  axios.get('/gearswap/' + event.target.id).then((response)=>{
+
+      if(stats){
+        this.setState({
+          showStats:false,
+          gear: response.data
+        })
+      }else{
+        this.setState({
+          showStats:true,
+          gear: response.data
+        })
+      }
+  })
+}
+
 componentDidMount = () => {
   axios.get('/gearswap').then((response) => {
     this.setState({
@@ -67,28 +86,62 @@ componentDidMount = () => {
 }
 
 render = () => {
-        return <div>
+        return <div className='main'>
             <h1>Gear Swap</h1>
 
-            <h2>Gears For Swap</h2>
+            <h2><i>Rent some gear for the studio or an upcoming gig!</i></h2>
+            <br />
+            <div className='create'>
+            <section id="add">
+
+                <form onSubmit={this.handleSubmit}>
+                    <label htmlFor="type">Type</label>
+
+                    <input type="text" id="type" onChange={this.handleChange}/>
+                    <br/>
+
+                    <label htmlFor="make">Make</label>
+                    <input type="text" id="make" onChange={this.handleChange}/>
+                    <br/>
+                    <label htmlFor="model">Model</label>
+                    <input type="text" id="model" onChange={this.handleChange}/>
+                    <br/>
+                    <label htmlFor="condition">Condition</label>
+                    <input type="text" id="condition" onChange={this.handleChange}/>
+                    <br/>
+                    <label htmlFor="price">Rental Price</label>
+                    <input type="text" id="price" onChange={this.handleChange}/>
+                    <br/>
+                    <label htmlFor="seller">Seller Email:</label>
+                    <input type="text" id="seller" onChange={this.handleChange}/>
+                    <br/>
+                    <label htmlFor="image">Picture</label>
+                    <input type="url" id="image" onChange={this.handleChange}/>
+                    <br/>
+
+                    <input type="submit" value="Add Gear" />
+
+                </form>
+                </section>
+                </div>
+                <br />
             <section id="mid">
-            <ul>
+            <button value={this.state._id} onClick={this.showStats}>Show Details</button>
+            <br />
+            <div className='itemBox'>
                 {this.state.gear.map((gears) => {
-                    return <li key={gears._id}>
+                    return <div className='item' key={gears._id}>
+
 
                         <img src={gears.image} />
-                        <br/>
-                        <strong>{gears.type}</strong>
-                        <br/>
 
-                        <strong>{gears.make}</strong>
-                        <br/>
-                        {gears.model}, {gears.condition}
-                        <br/>
-                        <strong>{gears.price}</strong>
-                        <br/>
-                        <strong>{gears.seller}</strong>
-                        <br/>
+                        <h4>{ this.state.showStats ? 'Type: ' + gears.type : null }</h4>
+                        <h4>{ this.state.showStats ? 'Make: ' + gears.make : null }</h4>
+                        <h4>{ this.state.showStats ? 'Model: ' + gears.model : null }</h4>
+                        <h4>{ this.state.showStats ? 'Condition: ' + gears.condition : null }</h4>
+                        <h4>{ this.state.showStats ? 'Price: ' + gears.price : null }</h4>
+                        <h4>{ this.state.showStats ? <a href={'mailto:' + gears.seller}>Seller: {gears.seller}</a> : null }</h4>
+
 
                         <button value={gears._id} onClick={this.deleteGear}>Remove</button>
                         <br/>
@@ -169,53 +222,12 @@ render = () => {
                                 <input type="submit" value="Update Details" />
                             </form>
                         </details>
-                    </li>
+
+                    </div>
                 })}
-            </ul>
+                </div>
+
             </section>
-            <section id="add">
-                <h3>Do you have a gear want to SWAP?</h3>
-                <form onSubmit={this.handleSubmit}>
-                    <label htmlFor="type">Type</label>
-                    <br/>
-                    <input type="text" id="type" onChange={this.handleChange}/>
-                    <br/>
-
-                    <label htmlFor="make">Make</label>
-                    <br/>
-                    <input type="text" id="make" onChange={this.handleChange}/>
-                    <br/>
-
-                    <label htmlFor="model">Model</label>
-                    <br/>
-                    <input type="text" id="model" onChange={this.handleChange}/>
-                    <br/>
-
-                    <label htmlFor="condition">Condition</label>
-                    <br/>
-                    <input type="text" id="condition" onChange={this.handleChange}/>
-                    <br/>
-
-                    <label htmlFor="price">Rental Price</label>
-                    <br/>
-                    <input type="text" id="price" onChange={this.handleChange}/>
-                    <br/>
-
-                    <label htmlFor="seller">Seller</label>
-                    <br/>
-                    <input type="text" id="seller" onChange={this.handleChange}/>
-                    <br/>
-
-                    <label htmlFor="image">Picture</label>
-                    <br/>
-                    <input type="url" id="image" onChange={this.handleChange}/>
-                    <br/>
-
-                    <input type="submit" value="Add Gear" />
-
-                </form>
-                </section>
-
         </div>
     }
 }
