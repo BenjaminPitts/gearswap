@@ -75,8 +75,11 @@ render = () => {
                 {this.state.gear.map((gears) => {
                     return <li key={gears._id}>
 
-                        <img src={gears.type} />
+                        <img src={gears.image} />
                         <br/>
+                        <strong>{gears.type}</strong>
+                        <br/>
+
                         <strong>{gears.make}</strong>
                         <br/>
                         {gears.model}, {gears.condition}
@@ -84,8 +87,6 @@ render = () => {
                         <strong>{gears.price}</strong>
                         <br/>
                         <strong>{gears.seller}</strong>
-                        <br/>
-                        <strong>{gears.image}</strong>
                         <br/>
 
                         <button value={gears._id} onClick={this.deleteGear}>Remove</button>
