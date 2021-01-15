@@ -23,7 +23,7 @@ gearSwap.put('/:id', (req, res) => {
     req.params.id,
     req.body,
     { new: true },
-    (err, updatedShirt) => {
+    (err, updatedGear) => {
       if (err) {
         res.send(err)
      } else {

@@ -74,7 +74,7 @@ render = () => {
             <ul>
                 {this.state.gear.map((gears) => {
                     return <li key={gears._id}>
-                        {/* <iframe width="560" height="315" src={instrument.ytUrl} frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> */}
+
                         <img src={gears.type} />
                         <br/>
                         <strong>{gears.make}</strong>
@@ -139,7 +139,7 @@ render = () => {
                                 <input
                                 type="text"
                                 id="price"
-                                defaultValue={geseller}
+                                defaultValue={gears.seller}
                                 onChange={this.handleChange}
                                 />
                                 <br />
