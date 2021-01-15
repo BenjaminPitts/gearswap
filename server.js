@@ -1,3 +1,4 @@
+//DEPENDANCIES
 const express = require('express')
 const mongoose = require('mongoose')
 // CONFIGURATION
@@ -6,14 +7,10 @@ require('dotenv').config()
 const PORT = process.env.PORT
 const PROJECT3_DB = process.env.PROJECT3_DB
 // MIDDLEWARE
-app.use(express.json()) //use .json(), not .urlencoded()
+app.use(express.json())
 app.use(express.static('public'))
 
 
-
- // app.get('/', (req, res) => {
- //   res.json('hello buddy')
- // })
 const gearController = require('./controllers/gear.js')
 app.use('/gearswap', gearController)
 
