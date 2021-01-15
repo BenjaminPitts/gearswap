@@ -7,7 +7,7 @@ img {
   width: 60%;
 }
 div {
-  border: 1px solid gold;
+  /* border: 1px solid gold; */
 }
 h1 {
 font-family: monospace;
@@ -33,21 +33,45 @@ a {
 a:hover {
   color: ivory;
 }
-button {
+
+button{
+  border-radius: 10px;
+  background: ivory;
+  font-weight:bold;
+  font-size:18px;
   padding: 10px;
   cursor: pointer;
   font-family: monospace;
+  transition-duration: 1s;
+  tr
 }
-button, input {
+input {
   border-radius: 10px;
   background: ivory;
+
 }
-button:hover, input:hover {
+input:hover {
+
   background: gold;
+
+
+  transition:2s;
 }
-/* .item:active {
-  width: 80%;
-} */
+button:hover{
+  width:20%;
+  transition:1s;
+  background:red;
+}
+.item:hover {
+  transition: 2s;
+  width: 40%;
+ box-shadow:6px 6px 6px 6px #222939;
+ border-radius:10px;
+  cursor: pointer;
+}
+img:hover{
+  box-shadow:6px 6px 6px 6px #222939;
+}
 .container {
   display: flex;
   flex-direction: row;
@@ -70,6 +94,7 @@ button:hover, input:hover {
   align-items: center;
 }
 .item {
+  transition: 2s;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -85,4 +110,7 @@ button:hover, input:hover {
   justify-content: center;
   align-items: center;
   position: sticky;
+}
+.formi{
+text-align:end;
 }
