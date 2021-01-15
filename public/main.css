@@ -193,7 +193,7 @@ text-align:end;
     transition:2s;
   }
   button:hover{
-    width:700;
+    width:700px;
     transition:1s;
     background:red;
   }
