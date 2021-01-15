@@ -43,7 +43,7 @@ button{
   cursor: pointer;
   font-family: monospace;
   transition-duration: 1s;
-  tr
+
 }
 input {
   border-radius: 10px;
@@ -58,13 +58,13 @@ input:hover {
   transition:2s;
 }
 button:hover{
-  width:20%;
+  width:60%;
   transition:1s;
   background:red;
 }
 .item:hover {
   transition: 2s;
-  width: 40%;
+  width: 700px;
  box-shadow:6px 6px 6px 6px #222939;
  border-radius:10px;
   cursor: pointer;
@@ -94,13 +94,15 @@ img:hover{
   align-items: center;
 }
 .item {
+  position:relative;
+  margin: 10px;
   transition: 2s;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  width: 30%;
+  width: 500px;
 }
 
 .create {
@@ -113,4 +115,151 @@ img:hover{
 }
 .formi{
 text-align:end;
+}
+
+
+@media screen and (max-width: 992px){
+
+  body {
+    align-items: center;
+    background: #270808;
+    color: ivory;
+    text-align: center;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    padding:100px;
+
+  }
+  img {
+    width: 200%;
+  }
+  div {
+    /* border: 1px solid gold; */
+  }
+  h1 {
+  font-family: monospace;
+  font-size: 100px;
+  padding: 0;
+  margin: 0;
+  }
+  h2 {
+    font-size:35px;
+    padding: 0;
+    margin: 0;
+  }
+  h4 {
+    margin: 0;
+    padding: 0;
+    font-size: 24px;
+
+  }
+  i {
+    color: gold;
+  }
+  a {
+    text-decoration: none;
+    color: gold;
+  }
+  a:hover {
+    color: ivory;
+  }
+
+  button{
+    border-radius: 10px;
+    background: ivory;
+    font-weight:bold;
+    font-size:25px;
+    padding: 10px;
+    cursor: pointer;
+    font-family: monospace;
+    transition-duration: 1s;
+    width:80%;
+    height:100px;
+  }
+  input {
+    width:400px;
+    height:50px;
+    border-radius: 10px;
+    background: #f1f1ea;
+    font-size:30px;
+
+  }
+  input:hover {
+
+    background: gold;
+
+
+    transition:2s;
+  }
+  button:hover{
+    width:100%;
+    transition:1s;
+    background:red;
+  }
+  .item:hover {
+    transition: 2s;
+    width: 40%;
+   box-shadow:6px 6px 6px 6px #222939;
+   border-radius:10px;
+    cursor: pointer;
+    flex-wrap: wrap;
+  }
+  img:hover{
+    box-shadow:6px 6px 6px 6px #222939;
+  }
+  .container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  .main {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  .itemBox {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+  }
+  .item {
+    transition: 2s;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    margin:20%;
+  }
+
+  .create {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    font-size:35px;
+  }
+  .formi{
+  text-align:end;
+  }
+  .editform{
+    font-size: 30px;
+  }
+
+
+
+
+
+
 }

@@ -148,7 +148,7 @@ render = () => {
 
                         <button value={gears._id} onClick={this.deleteGear}>Remove</button>
                         <br/>
-                        <details>
+                        <details className="editform">
                             <summary>Edit {gears.type} Details</summary>
                             <form id={gears._id} onSubmit={this.updateGear}>
 
