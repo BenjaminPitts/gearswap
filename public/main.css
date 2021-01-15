@@ -143,6 +143,12 @@ text-align:end;
   padding: 0;
   margin: 0;
   }
+  h1:hover{
+  color:#cc1e2f;
+
+  transition:1s;
+   width:700px;
+}
   h2 {
     font-size:35px;
     padding: 0;
