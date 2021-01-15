@@ -1,7 +1,6 @@
 const express = require('express')
-const gearSwap = express.Router()
+const gearSwap =express.Router()
 
-const Gear = require('../models/gearswap.js')
 
 
 
