@@ -12,7 +12,7 @@ gearSwap.get('/', (req, res) => {
 
 gearSwap.post('/', (req, res) => {
   Gear.create(req.body, (err, createdGear) => {
-    Shirt.find({}, (err, foundGear) => {
+    Gear.find({}, (err, foundGear) => {
       res.json(foundGear)
     })
   })
