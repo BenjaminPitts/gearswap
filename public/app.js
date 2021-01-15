@@ -75,7 +75,7 @@ render = () => {
                 {this.state.gear.map((gears) => {
                     return <li key={gears._id}>
 
-                        <img src={gears.type} />
+                        <img src={gears.image} />
                         <br/>
                         <strong>{gears.make}</strong>
                         <br/>
