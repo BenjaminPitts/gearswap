@@ -21,7 +21,7 @@ class App extends React.Component {
   axios
     .post('/gearswap', this.state)
     .then(response =>
-      this.setState({ instruments: response.data,type: '',
+      this.setState({ gear: response.data,type: '',
       make: '',
       model: '',
       condition: '',
@@ -30,6 +30,7 @@ class App extends React.Component {
       image:''  })
     )
 }
+
 deleteGear = (event) => {
   axios.delete('/gearswap/' + event.target.value).then((response) => {
     this.setState({
