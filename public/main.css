@@ -1,17 +1,14 @@
 body {
-  background: gray;
+  background: #270808;
   color: ivory;
   text-align: center;
 }
 img {
-  width: 60%;
-}
-div {
-  /* border: 1px solid gold; */
+  width: 80%;
 }
 h1 {
 font-family: monospace;
-font-size: 70px;
+font-size: 90px;
 padding: 0;
 margin: 0;
 }
@@ -32,12 +29,11 @@ i {
 }
 a {
   text-decoration: none;
-  color: gold;
-}
-a:hover {
   color: ivory;
 }
-
+a:hover {
+  color: gold;
+}
 button{
   border-radius: 10px;
   background: ivory;
@@ -47,34 +43,41 @@ button{
   cursor: pointer;
   font-family: monospace;
   transition-duration: 1s;
-
+  text-align: center;
+}
+form {
+text-align:end;
 }
 input {
   border-radius: 10px;
   background: ivory;
-
+  font-size: 18px;
+}
+details {
+  font-family: monospace;
+  font-size: 18px;
 }
 input:hover {
-
   background: gold;
-
-
-  transition:2s;
+  transition:1s;
 }
 button:hover{
-  width:400px;
+  width: 30%;
   transition:1s;
   background:red;
 }
-.item:hover {
-  transition: 2s;
-  width: 700px;
- box-shadow:6px 6px 6px 6px #222939;
- border-radius:10px;
-  cursor: pointer;
-}
 img:hover{
   box-shadow:6px 6px 6px 6px #222939;
+  cursor: pointer;
+}
+details:hover {
+  cursor: pointer;
+}
+.item:hover {
+  transition: 2s;
+  width: 42%;
+ box-shadow:6px 6px 6px 6px #222939;
+ border-radius:10px;
 }
 .container {
   display: flex;
@@ -106,9 +109,8 @@ img:hover{
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  width: 500px;
+  width: 40%;
 }
-
 .create {
   display: flex;
   flex-direction: row;
@@ -117,12 +119,41 @@ img:hover{
   align-items: center;
   position: sticky;
 }
-.formi{
-text-align:end;
+#bigger {
+  font-family: monospace;
+  font-size: 35px;
 }
 
 
-@media screen and (max-width: 992px){
+@media screen and (max-width: 600px) {
+  h1 {
+    font-size: 60px;
+  }
+  .item {
+    position:relative;
+    margin: 10px;
+    transition: 2s;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 95%;
+  }
+  .itemBox {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+
+
+
+
+/* @media screen and (max-width: 992px){
 
   body {
     align-items: center;
@@ -139,7 +170,7 @@ text-align:end;
     width: 200%;
   }
   div {
-    /* border: 1px solid gold; */
+    border: 1px solid gold;
   }
   h1 {
   font-family: monospace;
@@ -266,4 +297,4 @@ text-align:end;
   .editform{
     font-size: 30px;
   }
-}
+} */
