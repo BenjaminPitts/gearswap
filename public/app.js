@@ -209,6 +209,7 @@ render = () => {
             <br />
             <br />
             <a href='/#top' id='bigger'>Back To Top</a>
+            <a href='/gearswap/seed' className='seed'>Reload Available List</a>
         </div>
     }
 }
