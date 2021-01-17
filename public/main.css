@@ -148,3 +148,12 @@ details:hover {
     align-items: center;
   }
 }
+button{
+width:400px;
+}
+button:hover{
+  width:70%;
+}
+.item:hover{
+  width:90%;
+}
