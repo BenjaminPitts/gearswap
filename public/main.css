@@ -4,7 +4,7 @@ body {
   text-align: center;
 }
 img {
-  width: 80%;
+  width: 90%;
 }
 h1 {
 font-family: monospace;
@@ -38,7 +38,7 @@ button{
   border-radius: 10px;
   background: ivory;
   font-weight:bold;
-  font-size:18px;
+  font-size:16px;
   padding: 10px;
   cursor: pointer;
   font-family: monospace;
@@ -62,7 +62,7 @@ input:hover {
   transition:1s;
 }
 button:hover{
-  width: 30%;
+  width: 60%;
   transition:1s;
   background:red;
 }
@@ -75,7 +75,7 @@ details:hover {
 }
 .item:hover {
   transition: 2s;
-  width: 42%;
+  width: 45%;
  box-shadow:6px 6px 6px 6px #222939;
  border-radius:10px;
 }
@@ -138,7 +138,7 @@ details:hover {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    width: 95%;
+    width: 85%;
   }
   .itemBox {
     display: flex;
@@ -147,13 +147,14 @@ details:hover {
     justify-content: center;
     align-items: center;
   }
-}
-button{
-width:400px;
-}
-button:hover{
+  button{
   width:70%;
-}
-.item:hover{
-  width:90%;
+  text-align: center;
+  }
+  button:hover{
+    width:90%;
+  }
+  .item:hover{
+    width:100%;
+  }
 }
