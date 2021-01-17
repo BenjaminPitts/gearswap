@@ -1,10 +1,7 @@
-
 const express = require('express')
 const gearSwap =express.Router()
 const Gear = require('../models/gearswap.js')
-
-
-
+const gearSeed = require('../models/gear_seed.js')
 gearSwap.get('/', (req, res) => {
   Gear.find({}, (err, foundGear) => {
     res.json(foundGear)
@@ -43,8 +40,11 @@ gearSwap.delete('/:id', (req, res) => {
     })
   })
 })
-
-
+gearSwap.get('/seed', (req, res) => {
+  Gear.insertMany(gearSeed, (err, manyGear) => {
+    res.redirect('/')
+  })
+})
 
 
 module.exports = gearSwap
