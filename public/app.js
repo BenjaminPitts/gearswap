@@ -63,7 +63,7 @@ updateGear = (event) => {
 showStats=(event)=>{
   event.preventDefault()
   let stats = this.state.showStats
-  axios.get('/gearswap/' + event.target.id, this.state).then((response)=>{
+  axios.get('/gearswap/' + event.target.id).then((response)=>{
 
       if(stats) {
         this.setState({
@@ -134,7 +134,7 @@ render = () => {
 
                         <h2>Item: <i>{gears.type}</i></h2>
                         <img src={gears.image} /><br />
-                        <button value={this.state._id} onClick={this.showStats}>
+                        <button value={gears._id} onClick={this.showStats}>
                         Show Details</button>
 
                         <h4>{ this.state.showStats ? 'Type: ' + gears.type : null }</h4>
