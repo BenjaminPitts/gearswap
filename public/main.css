@@ -62,7 +62,7 @@ input:hover {
   transition:1s;
 }
 button:hover{
-  width: 30%;
+  width: 60%;
   transition:1s;
   background:red;
 }
@@ -147,13 +147,14 @@ details:hover {
     justify-content: center;
     align-items: center;
   }
-}
+
 button{
-width:400px;
+width:50%;
 }
 button:hover{
-  width:70%;
+  width:80%;
 }
 .item:hover{
   width:90%;
+}
 }

@@ -63,7 +63,7 @@ updateGear = (event) => {
 showStats=(event)=>{
   event.preventDefault()
   let stats = this.state.showStats
-  axios.get('/gearswap/' + event.target.id).then((response)=>{
+  axios.get('/gearswap/' + event.target.id, this.state).then((response)=>{
 
       if(stats) {
         this.setState({
