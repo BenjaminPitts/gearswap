@@ -134,7 +134,7 @@ render = () => {
 
                         <h2>Item: <i>{gears.type}</i></h2>
                         <img src={gears.image} /><br />
-                        <button value={this.state._id} onClick={this.showStats}>
+                        <button value={gears._id} onClick={this.showStats}>
                         Show Details</button>
 
                         <h4>{ this.state.showStats ? 'Type: ' + gears.type : null }</h4>
@@ -209,7 +209,7 @@ render = () => {
             <br />
             <br />
             <a href='/#top' id='bigger'>Back To Top</a>
-            <a href='/gearswap/seed' className='seed'>Reload Available List</a>
+            <br />
         </div>
     }
 }
