@@ -107,7 +107,7 @@ image:"https://us-758c.kxcdn.com/wp-content/uploads/2016/12/music-gear-christmas
   price:15,
   seller:"timtim92@yahoo.com",
   image:"https://i.imgur.com/u4fWJr5.jpg"
-},
+}
 
 
 
