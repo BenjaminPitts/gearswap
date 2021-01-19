@@ -9,8 +9,11 @@ img {
 h1 {
 font-family: monospace;
 font-size: 90px;
-padding: 0;
+padding: 1.5rem;
 margin: 0;
+background: #090909;
+width: 95%;
+text-align: center;
 }
 h1:hover{
   color: #a52725;
@@ -63,8 +66,8 @@ input:hover {
 }
 button:hover{
   width: 60%;
-  transition:1s;
   background:red;
+  transition:1s;
 }
 img:hover{
   box-shadow:6px 6px 6px 6px #222939;
@@ -119,6 +122,9 @@ details:hover {
   align-items: center;
   position: sticky;
 }
+.footer {
+  background: #090909;
+}
 #bigger {
   font-family: monospace;
   font-size: 35px;
@@ -126,10 +132,10 @@ details:hover {
 
 
 @media screen and (max-width: 600px) {
-  h1 {
+h1 {
     font-size: 60px;
   }
-  .item {
+.item {
     position:relative;
     margin: 10px;
     transition: 2s;
@@ -140,21 +146,23 @@ details:hover {
     align-items: center;
     width: 85%;
   }
-  .itemBox {
+.itemBox {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
   }
-  button{
-  width:70%;
-  text-align: center;
+
+button {
+width:50%;
+}
+button:hover {
+  width:80%;
+}
+.item:hover {
+  width:95%;
   }
-  button:hover{
-    width:90%;
-  }
-  .item:hover{
-    width:100%;
-  }
+
+
 }
