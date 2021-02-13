@@ -4,7 +4,8 @@ body {
   text-align: center;
 }
 img {
-  width: 90%;
+  width: 80%;
+  border: 2px solid black;
 }
 h1 {
 font-family: monospace;
@@ -78,7 +79,7 @@ details:hover {
 }
 .item:hover {
   transition: 2s;
-  width: 45%;
+  width: 40%;
  box-shadow:6px 6px 6px 6px #222939;
  border-radius:10px;
 }
